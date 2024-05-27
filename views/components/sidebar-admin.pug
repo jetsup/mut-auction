@@ -1,0 +1,29 @@
+// SIDEBAR
+section#sidebar
+  a.brand(href='/')
+    i.bx.bxs-smile.icon
+    |  AdminSite
+  ul.side-menu
+    li
+      a.active(href='/')
+        i.bx.bxs-dashboard.icon
+        |  Dashboard
+    li.divider(data-text='main') Main
+    li
+      a(href='/auction-approval')
+        i.bx.bxs-inbox.icon
+        |  Auction-Approval
+        i.bx.bx-chevron-right.icon-right
+    li
+      a(href='/feedback')
+        i.bx.bx-table.icon
+        | Feedback
+    li
+      a(href='/reports')
+        i.bx.bxs-notepad.icon
+        | Reports
+        i.bx.bx-chevron-right.icon-right
+  .ads
+    .wrapper
+      a.btn-upgrade(href='/logout') Logout
+// SIDEBAR

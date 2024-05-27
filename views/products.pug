@@ -1,0 +1,50 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  title Products | MUT Auctioneers
+  link(href='/stylesheets/home.css' rel='stylesheet')
+
+include components/navbar.pug
+// ----Products ------
+.small-container
+  .row.row-2
+    h2 All - Products
+    select(id="product-sort-select")
+      option(value="0") Default
+      option(value="1") Sort by Price
+      option(value="2") Sort by Popularity
+      option(value="3") Sort by Brand
+      option(value="4") sort by Category
+  .row
+    each product in products
+      include components/product_card.pug
+
+  - if(pageCount) {
+    .page-btn
+      - if (currentPage == 1)
+        //- TODO: Find an icon for previous page
+        span(style="background: yellowgreen;") &#x27A0;
+      - else
+        a(href=`/products?page=${currentPage - 1}`)
+          span &#x27A0;
+      - for (let i = 0; i < pageCount; i++) {
+        - if (pagination[i].number === currentPage)
+          span(style="background: yellowgreen;")= pagination[i].number
+        - else
+          //- TODO: style the a tag to remove the underline
+          a(href=`/products?page=${pagination[i].number}`)
+            span= `${pagination[i].number}`
+        - if (i === pageCount - 1)
+          - if (currentPage < pageCount)
+            a(href=`/products?page=${currentPage + 1}`)
+              span &#x27A0;
+          - else
+            span(style="background: yellowgreen;") &#x27A0;
+      - }
+  - }
+
+// ---------------------Footer--------------------------
+include components/footer.pug
+
+script(src='js/ionicons.esm.js' type='module')
+script(src='js/ionicons.js' nomodule='')

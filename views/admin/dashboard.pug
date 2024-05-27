@@ -1,0 +1,82 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  link(href='css/boxicons.min.css' rel='stylesheet')
+  link(href='/stylesheets/1style.css' rel='stylesheet')
+  title AdminSite
+// SIDEBAR
+include ../components/sidebar-admin.pug
+// NAVBAR
+section#content
+  // NAVBAR
+  include ../components/navbar-admin.pug
+  // MAIN
+  main
+    h1.title Dashboard
+    ul.breadcrumbs
+      li
+        a(href='/') Home
+      li.divider /
+      li
+        a.active(href='/') Dashboard
+    .info-data
+      .card
+        .head
+          div
+            h2(id="user-count") #{users}
+            p Users
+          i.bx.bx-trending-up.icon
+        span.progress(data-value='40%')
+        span.label 40%
+      .card
+        .head
+          div
+            h2(id="transaction-count") #{transactions}
+            p Sales
+          i.bx.bx-trending-down.icon.down
+        span.progress(data-value='60%')
+        span.label 60%
+
+      .card
+        .head
+          div
+            h2 235
+            p Alerts
+          i.bx.bx-trending-up.icon
+        span.progress(data-value='80%')
+        span.label 80%
+    .data
+      .content-data
+        .head
+          h3 Sales Report
+          .menu
+            i.bx.bx-dots-horizontal-rounded.icon
+            ul.menu-link
+              li
+                a(href='#') Edit
+              li
+                a(href='#') Save
+              li
+                a(href='#') Remove
+        .chart
+          #chart
+      .content-data
+        .head
+          h3 Products
+          .menu
+            i.bx.bx-dots-horizontal-rounded.icon
+            ul.menu-link
+              li
+                a(href='#') Edit
+              li
+                a(href='#') Save
+              li
+                a(href='#') Remove
+        .chart
+          #chart0
+  // MAIN
+// NAVBAR
+//- script(src='https://cdn.jsdelivr.net/npm/apexcharts')
+script(src="js/apexcharts.min.js")
+script(src='/javascripts/1script.js')

@@ -1,0 +1,75 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(href='/css/boxicons.min.css' rel='stylesheet')
+    link(rel='stylesheet' href='/stylesheets/1style.css')
+    title AdminSite
+
+//- sidebar
+include ../components/sidebar-admin.pug
+
+// NAVBAR
+section#content
+    //- Navbar
+    include ../components/navbar-admin.pug
+    // MAIN
+    main
+        h1.title Dashboard
+        ul.breadcrumbs
+            li
+                a(href='index.html') Home
+            li.divider /
+            li
+                a.active(href='index.html') Dashboard
+        .col-2 
+        //- button.btn(onclick=`addToCart()`) Submit
+        //- button.btn(style='margin-left: 20px;' onclick=`makeYourOffer()`) Make Your Offer
+.info-data
+    .card
+        .head
+            div
+                h2 1500
+                p Users
+            i.bx.bx-trending-up.icon
+        span.progress(data-value='40%')
+        span.label 40%
+    .card
+        .head
+            div
+                h2 234
+                p Sales
+            i.bx.bx-trending-down.icon.down
+        span.progress(data-value='60%')
+        span.label 60%
+
+            .card
+                .head
+                    div
+                        h2 235
+                        p Alerts
+                    i.bx.bx-trending-up.icon
+                span.progress(data-value='80%')
+                span.label 80%
+.upload
+    form(action="/submit-profile" method="POST" enctype="multipart/form-data")
+// Upload ID Image
+div(style="margin-left:300px; margin-top: -120px")
+    label(for="idImage") Upload Student ID Image:
+    input(type="file" id="idImage" name="idImage" accept=".jpg, .jpeg, .png")
+
+    // Upload Product Image
+    label(for="productImage") Upload Product Image:
+    input(type="file" id="productimage" name="productimage" accept=".jpg, .jpeg, .png" multiple)
+
+    // Bio Information
+div(style="margin-left:550px; padding:50px; font-size: 20px; color: white;")
+    label(for="product-description") Product-Description:
+    textarea(id="product-description" name="product-description" rows="4" placeholder="Product Description")
+
+    input(type="submit" value="Submit")
+
+// MAIN
+// NAVBAR
+script(src='https://cdn.jsdelivr.net/npm/apexcharts')
+script(src='/javascripts/1script.js')

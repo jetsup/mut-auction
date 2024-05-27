@@ -1,0 +1,130 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  title MUT Auctioneers
+  link(href='/stylesheets/home.css' rel='stylesheet')
+.header
+  .container
+    include components/navbar.pug
+    .row
+      .col-2
+        h1
+          | YOUR BEST DESTINATION,
+          br
+          |  FOR SECURE TRANSACTIONS!
+        p
+          br
+          br
+          | YOUR NUMBER ONE, STOP FOR BEST DEALS
+          //- | ALL WE EVER WANT IS SOME MONEY $ SOME JEWELS
+          br
+          br
+          | AND SAFE AND SECURE TRANSACTIONS !
+          //- |  PRAY WE MAKE SOME LITTLE EXTRA CASH FOR
+          |                         SOME
+          |                         DUES&apos;
+        a.btn(href='/products') Explore Now &#x27A0;
+      .col-2
+        img(src='/images/assets/image1.png')
+
+// ---- Featured Categories ------
+.categories
+  .small-container
+    .row
+      .col-3
+        img(src='/images/uploads/category-1.jpg')
+      .col-3
+        img(src='/images/uploads/category-2.jpg')
+      .col-3
+        img(src='/images/uploads/category-3.jpg')
+
+// ---- Featured Products ------
+//- Suggest products based on the categories under users preferences
+.small-container
+  h2.title Suggested For You
+  .row
+    each product in suggestedProducts
+      include components/product_card.pug
+  // ---- Latest Products ------
+  h2.title Latest Products
+  .row
+    each product in products
+        include components/product_card.pug
+// Offer
+.offer
+  .small-container
+    .row
+      .col-2
+        img.offer-img(src='/images/uploads/exclusive.png')
+      .col-2
+        p
+          | Exclusively Available on MUT Auctioneers Store
+          br
+          br
+          // - <br>All This Ice On Me [Glacier]<br>Approach Ya' B**** She Already Wet ['Splash' 'Splash'] -
+        h2 Smart Glacier 4
+        small
+          | The Smart Glacier 4 Features a 40.0% larger [than Glacier 3] Amoled color full-touch display
+          | with adjustable Brightness, so Everything is Clear as ICE
+          br
+          br
+          | Item has been in use for 6 months, works perfectly
+        br
+        a.btn(href='') Buy Now &#x27A0;
+// ---------------- Feedback --------------------
+.testimonial
+  .small-container
+    .row
+      .col-3
+        p
+          | Kangas have existed in East Africa
+          br
+          |  since the mid 19th century.
+        .rating
+          ion-icon(name='star')
+          ion-icon(name='star')
+          ion-icon(name='star')
+          ion-icon(name='star')
+          ion-icon(name='star-outline')
+        img(src='/images/uploads/user-1.png')
+        h3 Mabel
+      .col-3
+        p
+          | In the 1870s Muslim Women in Zanzibar and Mombasa, Kenyan imported Portuguese traders.
+        .rating
+          ion-icon(name='star')
+          ion-icon(name='star')
+          ion-icon(name='star')
+          ion-icon(name='star')
+          ion-icon(name='star-outline')
+        img(src='/images/uploads/user-2.png')
+        h3 Abel
+      .col-3
+        p
+          | In the 1870s Muslim Women in Zanzibar and Mombasa, Kenya bought printed bandanas.
+        .rating
+          ion-icon(name='star')
+          ion-icon(name='star')
+          ion-icon(name='star')
+          ion-icon(name='star')
+          ion-icon(name='star-outline')
+        img(src='/images/uploads/user-3.png')
+        h3 El
+  // ----------------------------------------------Brands--------------------------------------
+  .brands
+    .small-container
+      .row
+        .col-5
+          img(src='/images/assets/logo-coca-cola.png')
+        .col-5
+          img(src='/images/assets/logo-godrej.png')
+        .col-5
+          img(src='/images/assets/logo-oppo.png')
+        .col-5
+          img(src='/images/assets/logo-paypal.png')
+        .col-5
+          img(src='/images/assets/logo-philips.png')
+  // ---------------------Footer--------------------------
+  include components/footer.pug
+  script(src='js/ionicons.esm.js' type='module')
+  script(src='js/ionicons.js' nomodule='')

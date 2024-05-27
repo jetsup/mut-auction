@@ -1,0 +1,71 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(href='/css/boxicons.min.css' rel='stylesheet')
+  link(rel='stylesheet' href='/stylesheets/1style.css')
+  title AdminSite
+
+//- sidebar
+include ../components/sidebar-admin.pug
+
+// NAVBAR
+section#content
+  //- Navbar
+  include ../components/navbar-admin.pug
+  // MAIN
+  main
+    h1.title Dashboard
+    ul.breadcrumbs
+      li
+        a(href='index.html') Home
+      li.divider /
+      li
+        a.active(href='index.html') Dashboard
+
+
+        // -----------------single product details------------
+.small-container.single-product
+  .row
+    .col-2
+      img(src=`/images/user-1.png` width='100%' alt='Product Image')
+      // -------------- show multiple product images------------
+      .small-img-row
+        //- each image in product.images.split(",")
+          .small-img-col
+            img.small-img(src=`` width='100%')
+    .col-2
+      h1 Red Printed T-shirt by HRX
+      h5 Product Details
+      p In this repo you will find the code and
+       | instructions to host an auction website for free using GitHub Pages and
+       | Firebase anonymous authentication and databases. This is a project I originally worked
+       | on for a charity event and I've been improving it in my spare time ever since. Contributions and suggestions are welcome!
+      br
+      button.btn(onclick=`approve()`) Approve
+
+  // MAIN
+// NAVBAR
+//- script(src='https://cdn.jsdelivr.net/npm/apexcharts')
+script(src='/javascripts/1script.js')
+
+// ------------ js for product images-----------------------
+script.
+  var ProductImg = document.getElementById("ProductImg");
+  var SmallImg = document.getElementsByClassName("small-img");
+  SmallImg[0].onclick = function()
+  {
+  ProductImg.src = SmallImg[0].src;
+  }
+  SmallImg[1].onclick = function()
+  {
+  ProductImg.src = SmallImg[1].src;
+  }
+  SmallImg[2].onclick = function()
+  {
+  ProductImg.src = SmallImg[2].src;
+  }
+  SmallImg[3].onclick = function()
+  {
+  ProductImg.src = SmallImg[3].src;
+  }

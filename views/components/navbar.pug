@@ -1,0 +1,16 @@
+.head(style='background: radial-gradient(white, #ffd6d6);')
+  .container
+    .navbar
+          h2.logo
+            ion-icon(name='logo-medium')
+            |  MUT Auctioneers
+          nav.navigation
+            a(href='/') Home
+            a(href='/products') Products
+            a(href='/about') About Us
+            a(href='/contacts') Contacts
+            //- this should only be visible for authenticated users
+            a(href='/account') Account
+            // <button class="btnLogin-popup">Login</button>
+          a(href='/cart')
+            img(src='/images/assets/cart.png' width='30px' height='30px')

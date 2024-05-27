@@ -1,0 +1,93 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  //- link(href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet')
+  link(rel="stylesheet", href="/css/boxicons.min.css")
+  link(rel='stylesheet' href='/stylesheets/1style.css')
+  title AdminSite | Orders
+// SIDEBAR
+include ../components/sidebar-admin.pug
+// NAVBAR
+section#content
+  // NAVBAR
+  include ../components/navbar-admin.pug
+  // MAIN
+  main
+    h1.title Recent Orders
+    ul.breadcrumbs
+      li
+        a(href='admin.html') Home
+      li.divider /
+      li
+        a.active(href='#') Recent Orders
+    .info-data
+      .card
+        .head
+          div
+            h2 1500
+            p Users
+          i.bx.bx-trending-up.icon
+        span.progress(data-value='40%')
+        span.label 40%
+      .card
+        .head
+          div
+            h2 234
+            p Sales
+          i.bx.bx-trending-down.icon.down
+        span.progress(data-value='60%')
+        span.label 60%
+      .card
+        .head
+          div
+            h2 235
+            p Visitors
+          i.bx.bx-trending-up.icon
+        span.progress(data-value='80%')
+        span.label 80%
+    // --------------------- recent orders------------------
+    .table-data
+      .order
+        .head
+          h3 Recent Orders
+          i.bx.bx-search
+          i.bx.bx-filter
+        table
+          thead
+            tr
+              th User
+              th Date Order
+              th Status
+          tbody
+            tr
+              include ../components/orders-td.pug
+
+      .todo
+        .head
+          h3 Todos
+          i.bx.bx-plus
+          i.bx.bx-filter
+        ul.todo-list
+          li.completed
+            p Todo List
+            i.bx.bx-dots-vertical-rounded
+          li.completed
+            p Todo List
+            i.bx.bx-dots-vertical-rounded
+          li.not-completed
+            p Todo List
+            i.bx.bx-dots-vertical-rounded
+          li.completed
+            p Todo List
+            i.bx.bx-dots-vertical-rounded
+          li.not-completed
+            p Todo List
+            i.bx.bx-dots-vertical-rounded
+  // MAIN
+// NAVBAR
+//- script(src='https://cdn.jsdelivr.net/npm/apexcharts')
+//- script(src="js/apexcharts.esm.js")
+//- script(src='/js/apexcharts.js')
+script(src="js/apexcharts.min.js")
+script(src='/javascripts/1script.js')

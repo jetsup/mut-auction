@@ -1,0 +1,94 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(href='/css/boxicons.min.css' rel='stylesheet')
+  link(rel='stylesheet' href='/stylesheets/1style.css')
+  title AdminSite
+
+//- sidebar
+include ../components/sidebar-admin.pug
+
+// NAVBAR
+section#content
+  //- Navbar
+  include ../components/navbar-admin.pug
+  // MAIN
+  main
+    h1.title Dashboard
+    ul.breadcrumbs
+      li
+        a(href='index.html') Home
+      li.divider /
+      li
+        a.active(href='index.html') Dashboard
+    .info-data
+      .card
+        .head
+          div
+            h2 1500
+            p Users
+          i.bx.bx-trending-up.icon
+        span.progress(data-value='40%')
+        span.label 40%
+      .card
+        .head
+          div
+            h2 234
+            p Sales
+          i.bx.bx-trending-down.icon.down
+        span.progress(data-value='60%')
+        span.label 60%
+      //
+        <div class="card">
+        <div class="head">
+        <div>
+        <h2>465</h2>
+        <p>Pageviews</p>
+        </div>
+        <i class='bx bx-trending-up icon' ></i>
+        </div>
+        <span class="progress" data-value="30%"></span>
+        <span class="label">30%</span>
+        </div>
+      .card
+        .head
+          div
+            h2 235
+            p Alerts
+          i.bx.bx-trending-up.icon
+        span.progress(data-value='80%')
+        span.label 80%
+    .data
+      .content-data
+        .head
+          h3 Sales Report
+          .menu
+            i.bx.bx-dots-horizontal-rounded.icon
+            ul.menu-link
+              li
+                a(href='#') Edit
+              li
+                a(href='#') Save
+              li
+                a(href='#') Remove
+        .chart
+          #chart
+      .content-data
+        .head
+          h3 Products
+          .menu
+            i.bx.bx-dots-horizontal-rounded.icon
+            ul.menu-link
+              li
+                a(href='#') Edit
+              li
+                a(href='#') Save
+              li
+                a(href='#') Remove
+        .chart
+          #chart
+  // MAIN
+// NAVBAR
+script(src='https://cdn.jsdelivr.net/npm/apexcharts')
+script(src='/javascripts/1script.js')

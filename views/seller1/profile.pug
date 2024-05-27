@@ -1,0 +1,53 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='public/stylesheets/profile.css')
+  link(href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet')
+  title User Profile
+.container
+  .leftbox
+    nav
+      a.tab.active(onclick='tabs(0)')
+        i.bx.bxs-smile.icon
+      a.tab(onclick='tabs(1)')
+        i.bx.bxs-widget.icon
+      a.tab(onclick='tabs(2)')
+        i.bx.bx-table.icon
+  .rightbox
+    .profile.tabshow
+      h1 Personal Info
+      h2 Full Name
+      input(type='text' placeholder='John Doe')
+      h2 Birth Date
+      input(type='text' placeholder='01-12-2012')
+      h2 Gender
+      input(type='text' placeholder='Gender')
+      h2 Email
+      input(type='text' placeholder='dow@dollars.com')
+      h2 Password
+      input.input(type='password' value='bright')
+      button.btn Update
+    .payment.tabshow
+      h1 Payment Informmation
+      h2 Payment Method
+      input(type='text' placeholder='M-Pesa')
+      h2 Billing Address
+      input(type='text' placeholder='01 summer street')
+      h2 Postal Code
+      input(type='text' placeholder='1960')
+      button.btn Update
+    .profile.tabshow
+      h1 Accoun Settings
+      h2 Purge Account
+      button.btn Update
+script.
+  const tabBtn = document.querySelectorAll(".tab");
+  const tab = document.querySelectorAll(".tabshow");
+  function tabs(panelIndex) {
+  tab.forEach(function(node) {
+  node.style.display = "none";
+  });
+  tab[panelIndex].style.display = "block";
+  }
+  tabs(0);

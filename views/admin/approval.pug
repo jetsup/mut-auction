@@ -1,0 +1,67 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet')
+  link(rel='stylesheet' href='/stylesheets/1style.css')
+  title AdminSite | Orders
+// SIDEBAR
+include ../components/sidebar-admin.pug
+// NAVBAR
+section#content
+  // NAVBAR
+  include ../components/navbar-admin.pug
+  // MAIN
+  main
+    h1.title Recent Orders
+    ul.breadcrumbs
+      li
+        a(href='admin.html') Home
+      li.divider /
+      li
+        a.active(href='#') Recent Orders
+    include ../components/analytics-admin.pug
+    //- .info-data
+      .card
+        .head
+          div
+            h2 1500
+            p Users
+          i.bx.bx-trending-up.icon
+        span.progress(data-value='40%')
+        span.label 40%
+      .card
+        .head
+          div
+            h2 234
+            p Sales
+          i.bx.bx-trending-down.icon.down
+        span.progress(data-value='60%')
+        span.label 60%
+      .card
+        .head
+          div
+            h2 235
+            p Visitors
+          i.bx.bx-trending-up.icon
+        span.progress(data-value='80%')
+        span.label 80%
+    // --------------------- recent orders------------------
+    .table-data
+      .order
+        .head
+          h3 Auction-Approval
+          i.bx.bx-search
+          i.bx.bx-filter
+        table
+          thead
+            tr
+              th seller
+              th Auction-Submission
+              th Status
+          tbody
+            include ../components/approval-tr.pug
+  // MAIN
+// NAVBAR
+script(src='https://cdn.jsdelivr.net/npm/apexcharts')
+script(src='/javascripts/1script.js')

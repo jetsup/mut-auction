@@ -1,0 +1,80 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  title MUT Auctioneers
+  link(rel='stylesheet' href='/stylesheets/contact-us.css')
+.hero
+  include components/navbar.pug
+  // --------start---------------
+  .socials
+    p Talk to Us through our Social Platforms
+    h3 Follow Us :
+    br
+    ul
+      li
+        ion-icon(name='logo-instagram')
+        | &nbsp;&nbsp;&nbsp;Instagram
+      li
+        ion-icon(name='logo-twitter')
+        | &nbsp;&nbsp;&nbsp;Twitter
+      li
+        ion-icon(name='logo-facebook')
+        | &nbsp;&nbsp;&nbsp;Facebook
+      li
+        ion-icon(name='logo-whatsapp')
+        | &nbsp;&nbsp;&nbsp;Whatsapp
+  // --------------------------------------contact us---------------------------------------------
+  section.contact
+    .contact-form
+      h1 Contact Us
+      p
+        | Our Auction Site operate&apos;s 24/7.
+        br
+        | Connect with Us via - Phone: 020-203-0405
+        br
+        |  &amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbspEmail:
+        |                 mut@auctoineers.co.ke
+      // --------------------------------end------------------------
+      form(action='')
+        input(type='' placeholder='Your Name' required='')
+        input(type='email' name='email' placeholder='E-mail' required='')
+        input(type='' placeholder='Write a Subject' required='')
+        br
+        textarea(name='' id='' cols='30' rows='10' placeholder='Your Message')
+        input.btn(type='submit' name='' value='submit')
+  // ----------------------------------------------Brands--------------------------------------
+  include components/brand-sponsors.pug
+  // ---------------------Footer--------------------------
+  .footer
+    .container
+      .row
+        .footer-col-2
+          h2.logo
+            ion-icon(name='logo-medium')
+            |  MUT Auctioneers
+          // <img src="images/logo-white.png">
+          p Our Purpose is to Help You &apos;Keep Your Money where Your Mouth is&apos;
+        .footer-col-3
+          h3 Useful Links
+          ul
+            li Return Policy
+            li Report
+        .footer-col-4
+          h3 Follow Us
+          ul
+            li
+              ion-icon(name='logo-instagram')
+              | &nbsp;&nbsp;&nbsp;Instagram
+            li
+              ion-icon(name='logo-twitter')
+              | &nbsp;&nbsp;&nbsp;Twitter
+            li
+              ion-icon(name='logo-facebook')
+              | &nbsp;&nbsp;&nbsp;Facebook
+            li
+              ion-icon(name='logo-whatsapp')
+              | &nbsp;&nbsp;&nbsp;Whatsapp
+      hr
+      p.copyright &quot;Copyright 2024 - Kenyavic&quot;
+script(type='module' src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js')
+script(nomodule='' src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js')

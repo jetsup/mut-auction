@@ -1,0 +1,10 @@
+.col-4
+  a(href=`/products/product/${product.id}`)
+    img(src=`/images/uploads/${(product.images).split(",")[0]}`)
+  h4= product.product_name
+  //- .rating
+    each star in Array(product.rating).fill('')
+      ion-icon(name='star')
+    each star in Array(5 - product.rating).fill('')
+      ion-icon(name='star-outline')
+  p KES.#{(product.minimum_price).toLocaleString()}

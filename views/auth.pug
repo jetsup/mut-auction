@@ -1,0 +1,92 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  title= title
+  link(href='/stylesheets/login.css' rel='stylesheet')
+header
+  h2.logo MUT Auctioneers
+  nav.navigation
+    a(href='/') Home
+    a(href='/about-us') About Us
+    a(href='/contacts') Contacts
+    // <button class="btnLogin-popup">Login</button>
+//- include components/navbar.pug
+.wrapper
+  //
+    <span class="icon-close">
+    <ion-icon name="close"></ion-icon>
+    </span>
+  .form-box.login
+    h2 Login
+    form(action='/signin' method='POST')
+      .input-box
+        span.icon
+          ion-icon(name='mail')
+        input(name="username" type='user' required='')
+        label(style='margin-left: 0px;') Email
+      .input-box
+        span.icon
+          ion-icon(name='lock-closed')
+        input(name="password" type='password' required='')
+        label(style='margin-left: 0px;') Password
+      .remember-forgot
+        label
+          input(type='checkbox')
+          | Remember me
+        a(href='#') Forgot Password?
+      button.btn(type='submit') Login
+      .login-register
+        p
+          | Don&apos;t have an account?
+          a.register-link(href='#') Register
+  // Registration
+  .form-box.register
+    h2 Registration
+    form(action='/signup' method='POST')
+      .names
+        .input-box
+          span.icons
+            ion-icon(name='person')
+          input(name='first_name' type='text' style='margin-left: 20px;' required='')
+          label First Name
+        .input-box
+          span.icon
+            ion-icon(name='person')
+          input(name='last_name' type='text' required='')
+          label Last Name
+      .names
+        .input-box
+          span.icons
+            ion-icon(name='id-card')
+          input(name='id_number' type='number' style='margin-left: 20px;' required='')
+          label ID Number
+        .input-box
+          span.icon
+            ion-icon(name='person-add')
+          input(name='username' type='text' required='')
+          label Username
+      .input-box
+        span.icon
+          ion-icon(name='mail')
+        input(name='email' type='mail' required='')
+        label(style='margin-left:0px;') Email
+      .input-box
+        span.icon
+          ion-icon(name='lock-closed')
+        input(name='password' type='password' required='')
+        label(style='margin-left: 0px;') Password
+      .remember-forgot
+        label
+          input(name='terms' type='checkbox' required='')
+          | I Agree to the Terms &amp; Conditions
+      button.btn(type='submit') Register
+      .login-register
+        p
+          | Already have an account?
+          a.login-link(href='#') Login
+script(src='javascripts/script.js')
+//- script(src='javascripts/db.js')
+script(src='js/ionicons.esm.js' type="module")
+script(src='js/ionicons.js' nomodule)

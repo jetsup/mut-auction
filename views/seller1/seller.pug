@@ -1,0 +1,125 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet')
+  link(rel='stylesheet' href='public/stylesheets/1style.css')
+  title SellerSite
+// SIDEBAR
+section#sidebar
+  a.brand(href='seller.html')
+    i.bx.bxs-smile.icon
+    |  SellerSite
+  ul.side-menu
+    li
+      a.active(href='seller.html')
+        i.bx.bxs-dashboard.icon
+        |  Dashboard
+    li.divider(data-text='main') Main
+    li
+      a(href='#####')
+        i.bx.bxs-inbox.icon
+        | Open Auction
+        i.bx.bx-chevron-right.icon-right
+    li
+      a(href='rorders.html')
+        i.bx.bxs-widget.icon
+        | Recent Orders
+    li
+      a(href='rfeedback.html')
+        i.bx.bx-table.icon
+        | Feedback
+    li
+      a(href='profile.html')
+        i.bx.bx-table.icon
+        | Profile
+  .ads
+    .wrapper
+      a.btn-upgrade(href='####') Logout
+// SIDEBAR
+// NAVBAR
+section#content
+  // NAVBAR
+  nav
+    i.bx.bx-menu.toggle-sidebar
+    form(action='#')
+      .form-group
+        input(type='text' placeholder='Search...')
+        i.bx.bx-search.icon
+    a.nav-link(href='#')
+      i.bx.bxs-bell.icon
+      span.badge 5
+    a.nav-link(href='#')
+      i.bx.bxs-message-square-dots.icon
+      span.badge 8
+    span.divider
+    .profile
+      img(src='https://images.unsplash.com/photo-1517841905240-472988babdf9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' alt='')
+  // NAVBAR
+  // MAIN
+  main
+    h1.title Dashboard
+    ul.breadcrumbs
+      li
+        a(href='seller.html') Home
+      li.divider /
+      li
+        a.active(href='seller.html') Dashboard
+    .info-data
+      .card
+        .head
+          div
+            h2 1500
+            p Users
+          i.bx.bx-trending-up.icon
+        span.progress(data-value='40%')
+        span.label 40%
+      .card
+        .head
+          div
+            h2 234
+            p Sales
+          i.bx.bx-trending-down.icon.down
+        span.progress(data-value='60%')
+        span.label 60%
+      .card
+        .head
+          div
+            h2 235
+            p Visitors
+          i.bx.bx-trending-up.icon
+        span.progress(data-value='80%')
+        span.label 80%
+    .data
+      .content-data
+        .head
+          h3 Sales Report
+          .menu
+            i.bx.bx-dots-horizontal-rounded.icon
+            ul.menu-link
+              li
+                a(href='#') Edit
+              li
+                a(href='#') Save
+              li
+                a(href='#') Remove
+        .chart
+          #chart
+      .content-data
+        .head
+          h3 Visitors
+          .menu
+            i.bx.bx-dots-horizontal-rounded.icon
+            ul.menu-link
+              li
+                a(href='#') Edit
+              li
+                a(href='#') Save
+              li
+                a(href='#') Remove
+        .chart
+          #chart
+  // MAIN
+// NAVBAR
+script(src='https://cdn.jsdelivr.net/npm/apexcharts')
+script(src='public/javascript/1script.js')

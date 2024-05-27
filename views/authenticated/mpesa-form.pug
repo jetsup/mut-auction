@@ -1,0 +1,23 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Login Page
+  link(rel='stylesheet' href='/stylesheets/mpesa-form.css')
+.wrapper
+  .form-box.login
+    h2 M-PESA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Check Out
+    form(action='#')
+      .input-box
+        //
+          <span class="icon">
+          <ion-icon name="mail"></ion-icon>
+          </span>
+        input(type='number' required='')
+        label(style='margin-left: 0px;') Phone Number
+      .input-box
+        input(type='number' required='')
+        label(style='margin-left: 0px;') Amount
+      button#btn(type='submit') Pay
+script(src='mpesa-popup.js')

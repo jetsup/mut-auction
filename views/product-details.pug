@@ -1,0 +1,141 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  title Products | MUT Auctioneers
+  link(href='/stylesheets/home.css' rel='stylesheet')
+
+include components/navbar.pug
+// -----------------single product details------------
+.small-container.single-product
+  .row
+    .col-2
+      img#ProductImg(src=`/images/uploads/${product.images.split(",")[0]}` width='100%')
+      // -------------- show multiple product images------------
+      .small-img-row
+        each image in product.images.split(",")
+          .small-img-col
+            img.small-img(src=`/images/uploads/${image}` width='100%')
+    .col-2
+      p(style='margin-bottom: 100px;') Home/
+        a(href=`/products/category/${product.category_id}`) #{product.category_name}
+        span /#{product.product_name}
+      br
+      h1 Red Printed T-shirt by HRX
+      br
+      h4 Current Bid - KES.#{product.bid_price}
+      span() Minimum Price - KES.#{product.minimum_price}
+
+      select
+        option(value="0") Select Size
+        option(value="1") XXL
+        option(value="2") XL
+        option(value="3") Large
+        option(value="4") Medium
+        option(value="5") Small
+      input(id="my-offer" name="my-offer" type='number' value=`${product.minimum_price}` min=`${product.minimum_price - (0.15 * product.minimum_price)}` style="width: 100px")
+      //- button.btn(onclick=`addToCart(${product.id})`) Add to Cart
+      button.btn(style='margin-left: 20px;' onclick=`makeYourOffer(${product.id})`) Make Your Offer
+      div(style="border-radius: 20px; font-size: 20px; color: white;")
+      //- label(for="product-description") Product-Description:
+      //- textarea(id="product-description" name="product-description" rows="4" placeholder="")
+      h3 Product Details
+      p &quot;#{product.description}&quot;
+// -------------------- title -------------------------
+.small-container
+  .row.row-2
+    h2 Related Products
+    p
+      a(href="#") View More
+// ----Products ------
+.small-container
+  .row
+    .col-4
+      a(href='product-details.html')
+        img(src='/images/uploads/product-1.jpg')
+      h4 Red Printed T-shirt
+      .rating
+        ion-icon(name='star')
+        ion-icon(name='star')
+        ion-icon(name='star')
+        ion-icon(name='star')
+        ion-icon(name='star-outline')
+      p $50.00
+    .col-4
+      a(href='product-details.html')
+        img(src='/images/product-2.jpg')
+      h4 Sneakers
+      .rating
+        ion-icon(name='star')
+        ion-icon(name='star')
+        ion-icon(name='star')
+        ion-icon(name='star')
+        ion-icon(name='star-outline')
+      p $50.00
+    .col-4
+      a(href='product-details.html')
+        img(src='/images/product-3.jpg')
+      h4 Sweat-shirt
+      .rating
+        ion-icon(name='star')
+        ion-icon(name='star')
+        ion-icon(name='star')
+        ion-icon(name='star')
+        ion-icon(name='star-outline')
+      p $50.00
+    .col-4
+      a(href='product-details.html')
+        img(src='/images/product-4.jpg')
+      h4 Polo-Shirts
+      .rating
+        ion-icon(name='star')
+        ion-icon(name='star')
+        ion-icon(name='star')
+        ion-icon(name='star')
+        ion-icon(name='star-outline')
+      p $50.00
+// ---------------------Footer--------------------------
+include components/footer.pug
+//- script(type='module' src='js/ionicons.esm.js')
+//- script(nomodule='' src='js/ionicons.js')
+script(src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js' type='module')
+script(src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js' nomodule='')
+
+// ------------ js for product images-----------------------
+script.
+  var ProductImg = document.getElementById("ProductImg");
+  var SmallImg = document.getElementsByClassName("small-img");
+  SmallImg[0].onclick = function()
+  {
+  ProductImg.src = SmallImg[0].src;
+  }
+  SmallImg[1].onclick = function()
+  {
+  ProductImg.src = SmallImg[1].src;
+  }
+  SmallImg[2].onclick = function()
+  {
+  ProductImg.src = SmallImg[2].src;
+  }
+  SmallImg[3].onclick = function()
+  {
+  ProductImg.src = SmallImg[3].src;
+  }
+
+  function makeYourOffer(productID){
+    console.log(productID);
+    let ajax = new XMLHttpRequest();
+    ajax.open("POST", `/products/make-your-offer`, true);
+    ajax.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    ajax.onreadystatechange = function(){
+      if(this.readyState == 4 && this.status == 200){
+        console.log(this.responseText);
+        alert("Your offer has been received. We will get back to you soon.");
+      }
+    }
+
+    let data = {
+      "productID": productID,
+      "myOffer": document.getElementById("my-offer").value
+    }
+    ajax.send(JSON.stringify(data));
+  }
